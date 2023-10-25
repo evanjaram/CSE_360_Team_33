@@ -206,9 +206,11 @@ public class EffortLogConsoleGUI implements Initializable {
 			stopTime = formatTime(stopTimeObject);
 			
 			Duration duration = Duration.between(startTimeObject, stopDateObject);
-			minutes = duration.toMinutes();
+			double seconds = duration.toMillis() / 1000.0;
+			double minutes = seconds / 60.0;
+
 			//delete this portion later
-			System.out.print("Duration:" + minutes + "\n");
+			System.out.print("Duration:" + String.format("%.2f",  minutes) + "\n");
 			System.out.print("Start Date: " + startDate + "\n");
 			System.out.print("Start Time: " + startTime + "\n");
 			System.out.print("Stop Date: " + stopDate + "\n");
