@@ -57,7 +57,8 @@ public class EffortLogConsoleGUI implements Initializable {
 	private LocalDateTime startTimeObject, stopTimeObject, stopDateObject, startDateObject;
 	
 	private String startTime, startDate, stopTime, stopDate;
-	private long minutes = 0;
+	private double minutes;
+	private String employeeRank;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -207,9 +208,10 @@ public class EffortLogConsoleGUI implements Initializable {
 			
 			Duration duration = Duration.between(startTimeObject, stopDateObject);
 			double seconds = duration.toMillis() / 1000.0;
-			double minutes = seconds / 60.0;
+			minutes = seconds / 60.0;
 
-			//delete this portion later
+			//clock test to be deleted later
+			//test passed
 			System.out.print("Duration:" + String.format("%.2f",  minutes) + "\n");
 			System.out.print("Start Date: " + startDate + "\n");
 			System.out.print("Start Time: " + startTime + "\n");
@@ -220,6 +222,25 @@ public class EffortLogConsoleGUI implements Initializable {
 			clockLabel.setText("Clock is Stopped");
 			clockLabel.setStyle("-fx-background-color: red;");
 			isRunning = false;
+			
+			//new EffortLogEntry object
+			//for now employee rank will just be empty
+			//once connected to registration somehow will add to this
+			//will also be added through some method once connected to logs system
+			EffortLogEntry logEntry = new EffortLogEntry(projectType, lifeCycleStep, categoryName, effortName, otherDescription,
+										startDate, startTime, stopTime, employeeRank, minutes);
+			//test to be deleted later
+			//test passed
+			System.out.println(logEntry.getProjectType());
+			System.out.println(logEntry.getLifeCycleStep());
+			System.out.println(logEntry.getCategoryName());
+			System.out.println(logEntry.getEffortName());
+			System.out.println(logEntry.getOtherDescription());
+			System.out.println(logEntry.getDate());
+			System.out.println(logEntry.getStartTime());
+			System.out.println(logEntry.getStopTime());
+			System.out.println(logEntry.getEmployeeRank());
+			System.out.println(String.format("%.2f", logEntry.getDuration()));
 		}
 		else {
 			//display message that clock is not running
