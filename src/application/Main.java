@@ -14,8 +14,8 @@ public class Main extends Application {
 	
 	public static void setScene(String fxmlFilename){
 		try {
-			Parent root = FXMLLoader.load(Main.class.getResource(fxmlFilename));
-			Scene scene = new Scene(root);
+		    Parent root = FXMLLoader.load(Main.class.getResource(fxmlFilename));
+		    Scene scene = new Scene(root);
 		    globalStage.setScene(scene);
 		    globalStage.show();
 			
@@ -26,18 +26,8 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		globalStage = stage;
+		globalStage = primaryStage;
     		setScene("EffortLoggerGUI.fxml");
-		// try {
-		// 	//will change to login screen eventually
-		// 	Parent root = FXMLLoader.load(getClass().getResource("EffortLoggerGUI.fxml"));
-		// 	Scene scene = new Scene(root);
-		// 	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		// 	primaryStage.setScene(scene);
-		// 	primaryStage.show();
-		// } catch(Exception e) {
-		// 	e.printStackTrace();
-		// }
 	}
 	
 	public static void main(String[] args) {
