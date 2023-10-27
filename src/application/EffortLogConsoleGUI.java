@@ -60,7 +60,8 @@ public class EffortLogConsoleGUI implements Initializable {
 	private String startTime, startDate, stopTime, stopDate;
 	private double minutes;
 	private String employeeRank;
-	private ArrayList<EffortLogEntry> businessEntries, developmentEntries;
+	private ArrayList<EffortLogEntry> businessEntries = new ArrayList<EffortLogEntry>();
+	private ArrayList<EffortLogEntry> developmentEntries = new ArrayList<EffortLogEntry>();
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
