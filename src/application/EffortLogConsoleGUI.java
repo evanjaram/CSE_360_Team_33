@@ -150,6 +150,7 @@ public class EffortLogConsoleGUI implements Initializable {
 				categoryName = effortCategoryList[4];
 				otherDetailsLabel.setVisible(true);
 				otherDetailsTextField.setVisible(true);
+				otherDescriptionEventHandler();
 			}
 		});
 		
@@ -163,6 +164,7 @@ public class EffortLogConsoleGUI implements Initializable {
 			if (newValue.equals("Other")) {
 				otherDetailsLabel.setVisible(true);
 				otherDetailsTextField.setVisible(true);
+				otherDescriptionEventHandler();
 			}
 		});
 		
@@ -263,5 +265,11 @@ public class EffortLogConsoleGUI implements Initializable {
 	//event handler for the back to home button
 	public void backButtonEventHandler(ActionEvent event) {
 		//move scene to home screen
+	}
+	
+	public void otherDescriptionEventHandler() {
+		otherDetailsTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+			otherDescription = newValue;
+		});
 	}
 }
