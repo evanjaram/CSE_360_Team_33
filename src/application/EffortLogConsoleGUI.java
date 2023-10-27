@@ -8,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.*;
@@ -59,6 +60,7 @@ public class EffortLogConsoleGUI implements Initializable {
 	private String startTime, startDate, stopTime, stopDate;
 	private double minutes;
 	private String employeeRank;
+	private ArrayList<EffortLogEntry> businessEntries, developmentEntries;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -231,6 +233,15 @@ public class EffortLogConsoleGUI implements Initializable {
 			//will also be added through some method once connected to logs system
 			EffortLogEntry logEntry = new EffortLogEntry(projectType, lifeCycleStep, categoryName, effortName, otherDescription,
 										startDate, startTime, stopTime, employeeRank, minutes);
+			
+			//add to arraylist
+			if (logEntry.getProjectType() == "Business Project") {
+				businessEntries.add(logEntry);
+			}
+			else {
+				developmentEntries.add(logEntry);
+			}
+			
 			//test to be deleted later
 			//test passed
 			System.out.println(logEntry.getProjectType());
