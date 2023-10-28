@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="registrationScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"> <!--fx:controller="application.RegistrationScreen"-->
+<AnchorPane fx:id="registrationScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationScreen">
    <children>
    	  <Circle fx:id="circleLogo" fill="WHITE" layoutX="300.0" layoutY="40.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
       <Line fx:id="checkLogo1" endX="-79.5" endY="20.0" layoutX="380.0" layoutY="26.0" startX="-88.5" startY="13.0" stroke="#00c62b" strokeLineCap="ROUND" strokeWidth="11.0" />
@@ -44,27 +44,27 @@
             <Font name="Avenir Light" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField" layoutX="315.0" layoutY="155.0">
+      <TextField fx:id="usernameField" layoutX="315.0" layoutY="155.0" onAction="#usernameFieldHandler">
          <font>
             <Font name="Avenir Light" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="emailField" layoutX="315.0" layoutY="190.0">
+      <TextField fx:id="emailField" layoutX="315.0" layoutY="190.0" onAction="#emailFieldHandler">
          <font>
             <Font name="Avenir Light" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="passwordField1" layoutX="315.0" layoutY="225.0">
+      <TextField fx:id="passwordField1" layoutX="315.0" layoutY="225.0" onAction="#passwordField1Handler">
          <font>
             <Font name="Avenir Light" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="passwordField2" layoutX="315.0" layoutY="260.0">
+      <TextField fx:id="passwordField2" layoutX="315.0" layoutY="260.0" onAction="#passwordField2Handler">
          <font>
             <Font name="Avenir Light" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="registerButton" layoutX="189.0" layoutY="318.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="101.0" text="Register Me" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
+      <Button fx:id="registerButton" layoutX="189.0" layoutY="318.0" mnemonicParsing="false" onAction="#registerButtonHandler" prefHeight="62.0" prefWidth="101.0" text="Register Me" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
          <font>
             <Font name="Avenir Light" size="17.0" />
          </font>
@@ -72,7 +72,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="leaveSceneButton" layoutX="310.0" layoutY="318.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="101.0" text="Go Back" textAlignment="CENTER" textFill="#0075ff">
+      <Button fx:id="leaveSceneButton" layoutX="310.0" layoutY="318.0" mnemonicParsing="false" onAction="#leaveSceneButtonHandler" prefHeight="62.0" prefWidth="101.0" text="Go Back" textAlignment="CENTER" textFill="#0075ff">
          <font>
             <Font name="Avenir Light" size="17.0" />
          </font>
