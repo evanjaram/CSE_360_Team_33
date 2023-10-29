@@ -15,6 +15,7 @@ public class HomeController implements Initializable {
 	@FXML
 	private Label rankLabel, accessDeniedLabel;
 	
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		rankLabel.setText(employeeRank);
