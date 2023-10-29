@@ -31,5 +31,4 @@ public class HomeController {
 		System.out.println("That scene is not yet implemented");
 	}
 	
-	
 }
