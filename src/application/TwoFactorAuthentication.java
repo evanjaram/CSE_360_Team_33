@@ -48,6 +48,7 @@ public class TwoFactorAuthentication {
 		
 		//starting state of timer
 		timerLabel = new Label("1:00");
+		timerLabel.setVisible(true);
 		
 		//instantiate timerHandler to start timer and connect it to timerLabel
 		delay = 1;
@@ -93,12 +94,11 @@ public class TwoFactorAuthentication {
 		timer = scheduler.scheduleWithFixedDelay(countdown, delay, delay, TimeUnit.SECONDS);
 		Runnable endCountdown = () -> timer.cancel(true);
 		scheduler.schedule(endCountdown, 61, TimeUnit.SECONDS);
-		//Main.setScene("/LoginScreen.fxml");
+		Main.setScene("/LoginScreen.fxml");
 	}
 	
 	private void timerLabelDisplay() {
 		timerLabel.setText(String.format("0:%d", interval));
-		System.out.println(interval);
 		--interval;
 	}
 }
