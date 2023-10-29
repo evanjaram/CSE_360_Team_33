@@ -38,7 +38,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Label fx:id="rankLabel" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" />
+      <Label fx:id="rankLabel" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" text="Rank" />
       <Label fx:id="accessDeniedLabel" alignment="CENTER" layoutX="251.0" layoutY="358.0" prefHeight="17.0" prefWidth="130.0" text="Access Denied!" textFill="RED" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
