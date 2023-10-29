@@ -277,6 +277,7 @@ public class EffortLogConsoleGUI implements Initializable {
 	//event handler for the back to home button
 	public void backButtonEventHandler(ActionEvent event) {
 		//move scene to home screen
+		Main.setScene("/Home.fxml");
 	}
 	
 	public void otherDescriptionEventHandler() {
