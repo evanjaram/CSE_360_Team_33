@@ -20,7 +20,7 @@ public class PublicLogsController implements Initializable{
 	@FXML
 	private ChoiceBox<String> myChoiceBox;
 	
-	private String[] role = {"Enginer 1","Enginer 2","Developer 1", "Developer 2", "Supervisor 1", "Supervisor 2", "Project Manager 1", "Project Manager 2"};
+	private String[] role = {"Engineer 1","Engineer 2","Developer 1", "Developer 2", "Supervisor 1", "Supervisor 2", "Project Manager 1", "Project Manager 2"};
 
 	
     
