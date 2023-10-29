@@ -35,7 +35,7 @@ public class LoginController {
 	
 	public void switchtoSignUpScreen(ActionEvent event) throws IOException //really is the sign in button bad naming oops
 	{
-		 root = FXMLLoader.load(getClass().getResource("signUpScreen.fxml"));
+		 root = FXMLLoader.load(getClass().getResource("/signUpScreen.fxml"));
 		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		 scene = new Scene(root);
 		 stage.setScene(scene);
