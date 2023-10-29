@@ -64,7 +64,7 @@
             <Font name="Avenir Light" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="registerButton" layoutX="189.0" layoutY="318.0" mnemonicParsing="false" onAction="#SwitchToLoginScreen" prefHeight="62.0" prefWidth="101.0" text="Register Me" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
+      <Button fx:id="registerButton" layoutX="189.0" layoutY="318.0" mnemonicParsing="false" onAction="#switchtoLoginScreen" prefHeight="62.0" prefWidth="101.0" text="Register Me" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
          <font>
             <Font name="Avenir Light" size="17.0" />
          </font>
