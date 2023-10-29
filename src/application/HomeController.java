@@ -11,7 +11,7 @@ import javafx.scene.control.*;
 
 public class HomeController implements Initializable {
 	
-	private String employeeRank = "Engineer 1";
+	private String employeeRank = "Supervisor 1";
 	@FXML
 	private Label rankLabel, accessDeniedLabel;
 	
