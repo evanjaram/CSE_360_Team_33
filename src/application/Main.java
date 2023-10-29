@@ -27,7 +27,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		globalStage = primaryStage;
-    		setScene("EffortLoggerGUI.fxml");
+    		setScene("/Home.fxml");
 	}
 	
 	public static void main(String[] args) {
