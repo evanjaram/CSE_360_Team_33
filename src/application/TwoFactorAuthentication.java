@@ -2,14 +2,17 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
@@ -20,8 +23,6 @@ public class TwoFactorAuthentication implements Initializable {
 	
 	@FXML
 	private AnchorPane twoFAScene;
-	private Timer timer;
-	private int timerDelay;
 	@FXML
 	private Circle circleLogo;
 	@FXML
@@ -31,29 +32,85 @@ public class TwoFactorAuthentication implements Initializable {
 	@FXML
 	private VBox vb;
 	@FXML
-	private PasswordField passwordField;
+	private TextField keyField;
 	@FXML
 	private Button verifyButton;
+	//private static Timer timer;
+	private static int delay, interval;
+	private ScheduledExecutorService scheduler;
+	private ScheduledFuture<?> timer;
 	
 	@Override
 	//initializes GUI components
 	public void initialize(URL firstArg, ResourceBundle rb) {
+		twoFAScene = new AnchorPane();
+		circleLogo = new Circle();
+		checkLogo1 = new Line();
+		checkLogo2 = new Line();
+		nameLogo = new Label();
+		sceneLabel = new Label();
+		emailNotifLabel = new Label();
+		timerLabel = new Label();
+		vb = new VBox();
+		verifyButton = new Button();
 		
+		//connects keyField to handler and connects verifyButton to button handler within key handler
+		keyField = new TextField();
+		keyField.setOnAction(this::keyFieldHandler);
+		
+		//starting state of timer
+		timerLabel = new Label("1:00");
+		
+		//instantiate timerHandler to start timer and connect it to timerLabel
+		delay = 1;
+		interval = 59;
+		timerHandler();
+	}
+	
+	//handler for generating random key for 2FA
+	public String keyGenerator(int keyLength) {
+		String keyChars = "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789";
+		StringBuilder keyBuilder = new StringBuilder(keyLength);
+		
+		for(int i = 0; i <= keyLength+1; i++) {
+			int index = (int) (keyChars.length() * Math.random());
+			keyBuilder.append(keyChars.charAt(index));
+		}
+		
+		System.out.println(keyBuilder.toString());
+		return keyBuilder.toString();
 	}
 	
 	//key password field event handler for inputting key
 	public void keyFieldHandler(ActionEvent event) {
+		String key = keyGenerator(7);
 		
+		while(!verifyButton.isPressed()) {
+			if(keyField.getText().equals(key)) {
+				verifyButton.setOnAction(this::verifyButtonHandler);
+				break;
+			}
+		}
 	}
 	
-	//verification button event handler to verify key is correct and move to home scene
+	//verification button event handler to move to home scene
 	public void verifyButtonHandler(ActionEvent event) {
-		
+		Main.setScene("/Home.fxml");
 	}
 	
 	//counts down timer and returns to login screen if reaches 0
-	private void timerHandler(Timer timer, int timerDelay) {
-		Main.setScene("/TwoFactorAuthentication.fxml");
+	private void timerHandler() {
+		scheduler = Executors.newScheduledThreadPool(1);
+		Runnable countdown = () -> timerLabelDisplay();
+		timer = scheduler.scheduleWithFixedDelay(countdown, delay, delay, TimeUnit.SECONDS);
+		Runnable endCountdown = () -> timer.cancel(true);
+		scheduler.schedule(endCountdown, 61, TimeUnit.SECONDS);
+		//Main.setScene("/LoginScreen.fxml");
 	}
-
+	
+	private void timerLabelDisplay() {
+		timerLabel.setText(String.format("0:%d", interval));
+		System.out.println(interval);
+		--interval;
+	}
 }

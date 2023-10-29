@@ -31,7 +31,8 @@ public class RegistrationScreen implements Initializable {
 	//initializes GUI components
 	public void initialize(URL firstArg, ResourceBundle rb) {
 		//Registration GUI Components
-		
+		registerButton.setOnAction(this::registerButtonHandler);
+		leaveSceneButton.setOnAction(this::leaveSceneButtonHandler);
 	}
 	
 	//username field handler for inputting username registration info
@@ -61,7 +62,7 @@ public class RegistrationScreen implements Initializable {
 	
 	//return user to login screen with or without registration
 	public void leaveSceneButtonHandler(ActionEvent event) {
-		
+		Main.setScene("LoginScreen.fxml");
 	}
 
 }
