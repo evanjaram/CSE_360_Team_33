@@ -1,41 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<AnchorPane fx:id="registrationScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController"> <!--fx:controller="application.l"-->
    <children>
-      <Label layoutX="175.0" layoutY="26.0" text="Welcome To Effort Logger" textFill="#1d0aeb">
+   	  <Circle fx:id="circleLogo" fill="WHITE" layoutX="300.0" layoutY="40.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+      <Line fx:id="checkLogo1" endX="-79.5" endY="20.0" layoutX="380.0" layoutY="26.0" startX="-88.5" startY="13.0" stroke="#00c62b" strokeLineCap="ROUND" strokeWidth="11.0" />
+      <Line fx:id="checkLogo2" endX="-126.5" endY="41.0" layoutX="429.0" layoutY="6.0" startX="-106.5" startY="10.0" stroke="#00c62b" strokeLineCap="ROUND" strokeWidth="11.0" />
+      <Label fx:id="nameLogo" layoutX="148.0" layoutY="15.0" text="Effort     Logger">
          <font>
-            <Font size="20.0" />
+            <Font name="Arial Bold Italic" size="45.0" />
          </font>
       </Label>
-      <Label layoutX="144.0" layoutY="81.0" text="Username">
+      <Label fx:id="sceneLabel" layoutX="217.0" layoutY="79.0" prefHeight="62.0" prefWidth="166.0" text="Register" textFill="#0075ff" wrapText="true">
          <font>
-            <Font size="14.0" />
+            <Font name="Avenir Light" size="44.0" />
          </font>
       </Label>
-      <Label layoutX="146.0" layoutY="139.0" text="Password">
+      <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" layoutX="162.0" layoutY="147.0" text="Username:" textAlignment="RIGHT" textFill="#0075ff">
          <font>
-            <Font size="14.0" />
+            <Font name="Avenir Light" size="26.0" />
          </font>
       </Label>
-      <TextField layoutX="238.0" layoutY="79.0" promptText="Enter ID" />
-      <PasswordField layoutX="238.0" layoutY="137.0" promptText="Enter Password" />
-      <Button layoutX="265.0" layoutY="207.0" mnemonicParsing="false" onAction="#switchtoSignUpScreen" text="Login">
+      <Label fx:id="emailLabel" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="183.0" text="Email:" textAlignment="RIGHT" textFill="#0075ff">
          <font>
-            <Font size="16.0" />
+            <Font name="Avenir Light" size="26.0" />
          </font>
+      </Label>
+      <Label fx:id="passwordLabel1" alignment="CENTER_RIGHT" layoutX="169.0" layoutY="218.0" text="Password:" textAlignment="RIGHT" textFill="#0075ff">
+         <font>
+            <Font name="Avenir Light" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="passwordLabel2" alignment="CENTER_RIGHT" layoutX="80.0" layoutY="253.0" text="Repeat Password:" textAlignment="RIGHT" textFill="#0075ff">
+         <font>
+            <Font name="Avenir Light" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="315.0" layoutY="155.0">
+         <font>
+            <Font name="Avenir Light" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="emailField" layoutX="315.0" layoutY="190.0">
+         <font>
+            <Font name="Avenir Light" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="passwordField1" layoutX="315.0" layoutY="225.0">
+         <font>
+            <Font name="Avenir Light" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="passwordField2" layoutX="315.0" layoutY="260.0">
+         <font>
+            <Font name="Avenir Light" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="registerButton" layoutX="189.0" layoutY="318.0" mnemonicParsing="false" onAction="#SwitchToLoginScreen" prefHeight="62.0" prefWidth="101.0" text="Register Me" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
+         <font>
+            <Font name="Avenir Light" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="93.0" layoutY="294.0" text="Don't have an account with us?" />
-      <Button layoutX="301.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchtoCreateAccount" text="Click Here" textFill="#2722c6">
+      <Button fx:id="leaveSceneButton" layoutX="310.0" layoutY="318.0" mnemonicParsing="false" onAction="#switchtoCreateAccount" prefHeight="62.0" prefWidth="101.0" text="Go Back" textAlignment="CENTER" textFill="#0075ff">
          <font>
-            <Font size="14.0" />
+            <Font name="Avenir Light" size="17.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

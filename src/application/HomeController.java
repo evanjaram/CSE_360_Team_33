@@ -1,10 +1,24 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 
 
-public class HomeController {
+public class HomeController implements Initializable {
+	
+	private String employeeRank = "Engineer 1";
+	@FXML
+	private Label rankLabel, accessDeniedLabel;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		rankLabel.setText(employeeRank);
+	}
 	
 	@FXML
 	private void goToEffortLogConsole() {
@@ -18,7 +32,13 @@ public class HomeController {
 	
 	@FXML
 	private void goToPublicLogs() {
-		Main.setScene("/PublicLogs.fxml");
+		if ((employeeRank.equals("Engineer 1")) || (employeeRank.equals("Engineer 2")) || (employeeRank.equals("Developer 1"))
+				|| (employeeRank.equals("Developer 2"))) {
+			accessDeniedLabel.setVisible(true);
+		}
+		else {
+			Main.setScene("/PublicLogs.fxml");
+		}
 	}
 	
 	@FXML
