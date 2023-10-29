@@ -80,5 +80,20 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="successLabel" alignment="CENTER" layoutX="232.0" layoutY="289.0" prefHeight="29.0" prefWidth="137.0" text="Successful Registration" textAlignment="CENTER" textFill="RED" visible="false">
+         <font>
+            <Font name="Avenir Light Oblique" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="emptyFieldWarning" alignment="CENTER" layoutX="242.0" layoutY="299.0" prefHeight="29.0" prefWidth="137.0" text="One or more fields are empty" textAlignment="CENTER" textFill="RED" visible="false">
+         <font>
+            <Font name="Avenir Light Oblique" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="diffPasswordWarning" alignment="CENTER" layoutX="252.0" layoutY="309.0" prefHeight="29.0" prefWidth="137.0" text="Passwords do not match" textAlignment="CENTER" textFill="RED" visible="false">
+         <font>
+            <Font name="Avenir Light Oblique" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

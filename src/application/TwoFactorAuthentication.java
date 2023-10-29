@@ -1,7 +1,5 @@
 package application;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -9,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,9 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
-public class TwoFactorAuthentication implements Initializable {
-	//TwoFA GUI Components
-	
+public class TwoFactorAuthentication {
+	//2FA GUI Components
 	@FXML
 	private AnchorPane twoFAScene;
 	@FXML
@@ -40,19 +36,11 @@ public class TwoFactorAuthentication implements Initializable {
 	private ScheduledExecutorService scheduler;
 	private ScheduledFuture<?> timer;
 	
-	@Override
+	@FXML
 	//initializes GUI components
-	public void initialize(URL firstArg, ResourceBundle rb) {
+	public void initialize() {
 		twoFAScene = new AnchorPane();
-		circleLogo = new Circle();
-		checkLogo1 = new Line();
-		checkLogo2 = new Line();
-		nameLogo = new Label();
-		sceneLabel = new Label();
-		emailNotifLabel = new Label();
-		timerLabel = new Label();
-		vb = new VBox();
-		verifyButton = new Button();
+		twoFAScene.getChildren().add(timerLabel);
 		
 		//connects keyField to handler and connects verifyButton to button handler within key handler
 		keyField = new TextField();
