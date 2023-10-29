@@ -50,10 +50,11 @@ public class TwoFactorAuthentication {
 		timerLabel = new Label("1:00");
 		timerLabel.setVisible(true);
 		
+		verifyButton.setOnAction(this::verifyButtonHandler);
 		//instantiate timerHandler to start timer and connect it to timerLabel
-		delay = 1;
+		/*delay = 1;
 		interval = 59;
-		timerHandler();
+		timerHandler();*/
 	}
 	
 	//handler for generating random key for 2FA
@@ -72,14 +73,14 @@ public class TwoFactorAuthentication {
 	
 	//key password field event handler for inputting key
 	public void keyFieldHandler(ActionEvent event) {
-		String key = keyGenerator(7);
+		/*String key = keyGenerator(7);
 		
 		while(!verifyButton.isPressed()) {
 			if(keyField.getText().equals(key)) {
 				verifyButton.setOnAction(this::verifyButtonHandler);
 				break;
 			}
-		}
+		}*/
 	}
 	
 	//verification button event handler to move to home scene

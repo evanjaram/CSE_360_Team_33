@@ -65,7 +65,8 @@ public class RegistrationScreen {
 	
 	//confirms info is correctly entered and displays registration confirmation pop-up
 	public void registerButtonHandler(ActionEvent event) {
-		if(username != null && email != null && password != null && rePassword != null) {
+		successLabel.setVisible(true);
+		/*if(username != null && email != null && password != null && rePassword != null) {
 			if(password.equals(rePassword)) {
 				successLabel.setVisible(true);
 				emptyFieldWarning.setVisible(false);
@@ -79,7 +80,7 @@ public class RegistrationScreen {
 			emptyFieldWarning.setVisible(true);
 			successLabel.setVisible(false);
 			diffPasswordWarning.setVisible(false);
-		}
+		}*/
 	}
 	
 	//return user to login screen with or without registration
