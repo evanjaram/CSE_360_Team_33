@@ -32,7 +32,7 @@
          </font>
       </Button>
       <Label layoutX="93.0" layoutY="294.0" text="Don't have an account with us?" />
-      <Button layoutX="301.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchtoSignUpScreen" text="Click Here" textFill="#2722c6">
+      <Button layoutX="301.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchtoRegistrationScreen" text="Click Here" textFill="#2722c6">
          <font>
             <Font size="14.0" />
          </font>
