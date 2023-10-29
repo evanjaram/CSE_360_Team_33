@@ -12,68 +12,37 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class LoginController {
-	private Stage stage;
-	 private Scene scene;
-	 private Parent root;
 	public void switchtoLoginScreen(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/LoginScreen.fxml");
 	}
 	
 	public void switchtoCreateAccount(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/RegistrationScreen.fxml");
 	}
 	
 	public void switchtoSignUpScreen(ActionEvent event) throws IOException //really is the sign in button bad naming oops
 	{
-		 root = FXMLLoader.load(getClass().getResource("/signUpScreen.fxml"));
-		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		 scene = new Scene(root);
-		 stage.setScene(scene);
-		 stage.show();
+		Main.setScene("/signUpScreen.fxml");
 	}
 	public void switchtoRegistrationScreen(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/RegistrationScreen.fxml");
 	}
 	
 	public void switchtoEffortLogEditor(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("/EffortLogEditor.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/EffortLogEditor.fxml");
 	}
 	
 	public void switchtoTwoFactorAuthentication(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("/TwoFactorAuthentication.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/TwoFactorAuthentication.fxml");
 	}
 	
 	public void switchtoTwoHome(ActionEvent event) throws IOException
 	{
-		  root = FXMLLoader.load(getClass().getResource("/Home.fxml"));
-		  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		  scene = new Scene(root);
-		  stage.setScene(scene);
-		  stage.show();
+		Main.setScene("/Home.fxml");
 	}
 }
