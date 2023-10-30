@@ -1,6 +1,9 @@
 package application;
 
 import java.util.ArrayList;
+
+import java.util.HashMap;
+
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,11 +14,33 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class EffortLogViewerController {
+// Author: Joseph Cohen
 
+public class EffortLogViewerController {
+	
+	// This aligns with the design because it allows the users to see a list of all the features
+	// Also, if they want to look at a particular feature in detail and potentially edit it, they can
 	@FXML
 	private AnchorPane anchor;
 	
+	
+	// have a list of all the features that have been previously implemented
+	private static ArrayList<FeatureInfo> features = generateFeatures();
+	
+	// used so that when the user clicks on a button, I know what index in the List "features" it corresponds to
+	private HashMap<Button, Integer> map;
+	
+	private static ArrayList<FeatureInfo> generateFeatures(){
+		ArrayList<FeatureInfo> result = new ArrayList<>();
+		for(int i = 0; i < 100; i++) {
+			result.add(new FeatureInfo("Example Feature " + i));
+		}
+		return result;
+	}
+	
+	
+	
+	// set up the scene so that the user is able to see previous features, view them, and edit them
 	@FXML
 	private void initialize() {
 		VBox vbox = new VBox();
@@ -25,21 +50,21 @@ public class EffortLogViewerController {
 		anchor.getChildren().add(scroll);
 		vbox.setPrefWidth(scroll.getPrefWidth() - 20);
 		
-		ArrayList<String> features = new ArrayList<>();
-		for(int i = 1; i < 100; i++) {
-			features.add("Item " + i);
-		}
-		
-		for(String item : features) {
-			Button button = new Button(item);
+		map = new HashMap<>();
+		for(int i = 0; i < features.size(); i++) {
+			FeatureInfo item = features.get(i);
+			Button button = new Button(item.name);
 		    button.setMaxWidth(Double.MAX_VALUE);
 		    button.setAlignment(Pos.CENTER_LEFT);
 		    vbox.getChildren().add(button);
+		    map.put(button, i);
 		}
 		
 		for(Node node : vbox.getChildren()) {
 		    node.setOnMouseClicked(event -> {
 		        if(event.getClickCount() == 2) {
+		        	Button clickedButton = (Button) event.getSource();
+		        	EffortLogEditorController.currFeature = features.get(map.get(clickedButton));
 		        	Main.setScene("/EffortLogEditor.fxml");
 		        }
 		    });
@@ -48,6 +73,7 @@ public class EffortLogViewerController {
 
 	}
 	
+	// Transition back to the Home scene
 	@FXML
 	private void goHome() {
 		Main.setScene("/Home.fxml");
