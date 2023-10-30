@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 
 public class HomeController implements Initializable {
 	
+	//these variables are for risk reduction prototype 2
+	//they are used to determine access to public logs
 	private String employeeRank = "Supervisor 1";
 	@FXML
 	private Label rankLabel, accessDeniedLabel;
@@ -31,6 +33,7 @@ public class HomeController implements Initializable {
 		Main.setScene("/EffortLogViewer.fxml");
 	}
 	
+	//check to see if the employee has the proper credentials to access public logs
 	@FXML
 	private void goToPublicLogs() {
 		if ((employeeRank.equals("Engineer 1")) || (employeeRank.equals("Engineer 2")) || (employeeRank.equals("Developer 1"))
