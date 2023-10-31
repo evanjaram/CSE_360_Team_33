@@ -19,10 +19,10 @@ public class JoeUtils {
 	    }
 	}
 	
-	public static void setDimensions(Region thing, double x, double y, double width, double height) {
-	    thing.setLayoutX(x);
-	    thing.setLayoutY(y);
-	    thing.setPrefWidth(width);
-	    thing.setPrefHeight(height);
+	public static void setDimensions(Region r, double x, double y, double width, double height) {
+	    r.setLayoutX(x);
+	    r.setLayoutY(y);
+	    r.setPrefWidth(width);
+	    r.setPrefHeight(height);
 	}
 }

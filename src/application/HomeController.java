@@ -38,7 +38,9 @@ public class HomeController implements Initializable {
 	//check to see if the employee has the proper credentials to access public logs
 	@FXML
 	private void goToPublicLogs() {
-		if ((employeeRank.equals("Engineer 1")) || (employeeRank.equals("Engineer 2")) || (employeeRank.equals("Developer 1"))
+		if ((employeeRank.equals("Engineer 1")) 
+				|| (employeeRank.equals("Engineer 2")) 
+				|| (employeeRank.equals("Developer 1"))
 				|| (employeeRank.equals("Developer 2"))) {
 			accessDeniedLabel.setVisible(true);
 		}
