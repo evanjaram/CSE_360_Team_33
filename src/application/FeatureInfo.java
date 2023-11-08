@@ -20,6 +20,14 @@ public class FeatureInfo {
 		this.hoursSpent = hrsSpent;
 	}
 	
+	public FeatureInfo(String name, String tags) {
+		this.name = name;
+		this.tags = tags;
+		this.notes = "";
+		this.esimatedStoryPoints = -1.0;
+		this.hoursSpent = -1.0;
+	}
+	
 	public FeatureInfo(String name) {
 		this.name = name;
 		this.tags = "";
