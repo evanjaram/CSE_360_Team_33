@@ -14,7 +14,7 @@ public class HomeController implements Initializable {
 	//these variables are for risk reduction prototype 2
 	//done by Evan Jaramillo
 	//they are used to determine access to public logs
-	private String employeeRank = "Supervisor 1";
+	private String employeeRank = "Engineer 1";
 	@FXML
 	private Label rankLabel, accessDeniedLabel;
 	
