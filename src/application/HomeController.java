@@ -51,7 +51,7 @@ public class HomeController implements Initializable {
 	
 	@FXML
 	private void goToDefectLogEditor() {
-		System.out.println("That scene is not yet implemented");
+		Main.setScene("/DefectConsole.fxml");
 	}
 	
 	@FXML
