@@ -60,8 +60,9 @@ public class EffortLogConsoleGUI implements Initializable {
 	private String startTime, startDate, stopTime, stopDate;
 	private double minutes;
 	private String employeeRank;
-	private ArrayList<EffortLogEntry> businessEntries = new ArrayList<EffortLogEntry>();
-	private ArrayList<EffortLogEntry> developmentEntries = new ArrayList<EffortLogEntry>();
+	//public ArrayList<EffortLogEntry> effortEntries = new ArrayList<EffortLogEntry>();
+	//private ArrayList<EffortLogEntry> businessEntries = new ArrayList<EffortLogEntry>();
+	//private ArrayList<EffortLogEntry> developmentEntries = new ArrayList<EffortLogEntry>();
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -235,13 +236,20 @@ public class EffortLogConsoleGUI implements Initializable {
 			EffortLogEntry logEntry = new EffortLogEntry(projectType, lifeCycleStep, categoryName, effortName, otherDescription,
 										startDate, startTime, stopTime, employeeRank, minutes);
 			
+			if (projectType.equals("Business Project")) {
+				Main.businessProject.effortLogs.add(logEntry);
+			}
+			else {
+				Main.developmentProject.effortLogs.add(logEntry);
+			}
+			
 			//add to arraylist
-			if (logEntry.getProjectType() == "Business Project") {
+			/*if (logEntry.getProjectType() == "Business Project") {
 				businessEntries.add(logEntry);
 			}
 			else {
 				developmentEntries.add(logEntry);
-			}
+			}*/
 			
 			//test to be deleted later
 			//test passed
