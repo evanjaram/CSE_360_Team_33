@@ -1,3 +1,6 @@
+//Author: Evan Jaramillo
+//Description: this class is for each individual defect log entry
+
 package application;
 
 public class DefectLogEntry {

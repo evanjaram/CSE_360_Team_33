@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 
 public class Main extends Application {
 	private static Stage globalStage;
+	//global project objects
 	public static Project businessProject = new Project();
 	public static Project developmentProject = new Project();
 	
