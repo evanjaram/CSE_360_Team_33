@@ -1,3 +1,6 @@
+//Author: Evan Jaramillo
+//Description: This is the defect logs system from the original EffortLogger application
+
 package application;
 
 import javafx.scene.layout.*;

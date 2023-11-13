@@ -1,3 +1,7 @@
+//Author: Evan Jaramillo
+//Description: This class is for the individual business and development projects. It consists of 
+//			   DefectLogs and EffortLogs
+
 package application;
 
 import java.util.ArrayList;
