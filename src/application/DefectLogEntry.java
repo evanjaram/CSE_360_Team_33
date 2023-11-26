@@ -41,7 +41,7 @@ public class DefectLogEntry {
 		return name;
 	}
 	
-	public String getdetails() {
+	public String getDetails() {
 		return details;
 	}
 	

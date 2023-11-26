@@ -59,7 +59,7 @@ public class EffortLogConsoleGUI implements Initializable {
 	
 	private String startTime, startDate, stopTime, stopDate;
 	private double minutes;
-	private String employeeRank;
+	//private String employeeRank;
 	//public ArrayList<EffortLogEntry> effortEntries = new ArrayList<EffortLogEntry>();
 	//private ArrayList<EffortLogEntry> businessEntries = new ArrayList<EffortLogEntry>();
 	//private ArrayList<EffortLogEntry> developmentEntries = new ArrayList<EffortLogEntry>();
@@ -234,7 +234,7 @@ public class EffortLogConsoleGUI implements Initializable {
 			//once connected to registration somehow will add to this
 			//will also be added through some method once connected to logs system
 			EffortLogEntry logEntry = new EffortLogEntry(projectType, lifeCycleStep, categoryName, effortName, otherDescription,
-										startDate, startTime, stopTime, employeeRank, minutes);
+										startDate, startTime, stopTime, minutes);
 			
 			if (projectType.equals("Business Project")) {
 				Main.businessProject.effortLogs.add(logEntry);
@@ -261,7 +261,7 @@ public class EffortLogConsoleGUI implements Initializable {
 			System.out.println(logEntry.getDate());
 			System.out.println(logEntry.getStartTime());
 			System.out.println(logEntry.getStopTime());
-			System.out.println(logEntry.getEmployeeRank());
+			//System.out.println(logEntry.getEmployeeRank());
 			System.out.println(String.format("%.2f", logEntry.getDuration()));
 		}
 		else {

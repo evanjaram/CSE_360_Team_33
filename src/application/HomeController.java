@@ -55,8 +55,8 @@ public class HomeController implements Initializable {
 	}
 	
 	@FXML
-	private void goToDefinitions() {
-		System.out.println("That scene is not yet implemented");
+	private void goToLogs() {
+		Main.setScene("/Logs.fxml");
 	}
 	
 }

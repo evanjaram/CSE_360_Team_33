@@ -23,7 +23,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button cancelButton="true" layoutX="339.0" layoutY="273.0" mnemonicParsing="false" onAction="#goToDefinitions" prefHeight="69.0" prefWidth="130.0" text="Definitions" textAlignment="CENTER" textFill="BLUE">
+      <Button cancelButton="true" layoutX="339.0" layoutY="273.0" mnemonicParsing="false" onAction="#goToLogs" prefHeight="69.0" prefWidth="130.0" text="Logs" textAlignment="CENTER" textFill="BLUE">
          <font>
             <Font size="20.0" />
          </font>
