@@ -3,7 +3,7 @@ package application;
 public class EffortLogEntry {
 	private String projectType, lifeCycleStep, categoryName, effortName, otherDescription;
 	private String date, startTime, stopTime;
-	private String employeeRank;
+	//private String employeeRank;
 	private double duration;
 	
 	//default constructor
@@ -16,14 +16,14 @@ public class EffortLogEntry {
 		this.date = null;
 		this.startTime = null;
 		this.stopTime = null;
-		this.employeeRank = null;
+		//this.employeeRank = null;
 		this.duration = 0.0;
 	}
 	
 	//overloaded constructor
 	EffortLogEntry(String projectType, String lifeCycleStep, String categoryName, String effortName, 
 					String otherDescription, String date, String startTime, String stopTime, 
-					String employeeRank, double duration) {
+					double duration) {
 		this.projectType = projectType;
 		this.lifeCycleStep = lifeCycleStep;
 		this.categoryName = categoryName;
@@ -32,7 +32,7 @@ public class EffortLogEntry {
 		this.date = date;
 		this.startTime = startTime;
 		this.stopTime = stopTime;
-		this.employeeRank = employeeRank;
+		//this.employeeRank = employeeRank;
 		this.duration = duration;
 	}
 	
@@ -78,10 +78,12 @@ public class EffortLogEntry {
 		return stopTime;
 	}
 	
+	/*
 	//accessor for employee rank
 	public String getEmployeeRank() {
 		return employeeRank;
 	}
+	*/
 	
 	//accessor for duration
 	public double getDuration() {
@@ -130,10 +132,12 @@ public class EffortLogEntry {
 		this.stopTime = stopTime;
 	}
 	
+	/*
 	//mutator for employee rank
 	public void setEmployeeRank(String employeeRank) {
 		this.employeeRank = employeeRank;
 	}
+	*/
 	
 	//mutator for duration
 	public void setDuration(double duration) {

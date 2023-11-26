@@ -89,10 +89,13 @@ public class DefectConsoleController implements Initializable {
 				ArrayList<String> businessNames = Main.businessProject.getNames();
 				defectsListChoiceBox.getItems().addAll(businessNames);
 				injectedChoiceBox.getItems().addAll(businessLifeCycleStepsList);
+				removedChoiceBox.getItems().addAll(businessLifeCycleStepsList);
 			}
 			else {
 				ArrayList<String> developmentNames = Main.developmentProject.getNames();
 				defectsListChoiceBox.getItems().addAll(developmentNames);
+				injectedChoiceBox.getItems().addAll(developmentLifeCycleStepsList);
+				removedChoiceBox.getItems().addAll(developmentLifeCycleStepsList);
 			}
 		});
 		
@@ -131,7 +134,7 @@ public class DefectConsoleController implements Initializable {
 			currentInjected = currentDefect.getInjected();
 			currentRemoved = currentDefect.getRemoved();
 			currentCategory = currentDefect.getCategory();
-			currentDetails = currentDefect.getdetails();
+			currentDetails = currentDefect.getDetails();
 			currentDefectStatus = currentDefect.getStatus();
 			
 			injectedChoiceBox.setValue(currentInjected);
@@ -141,9 +144,15 @@ public class DefectConsoleController implements Initializable {
 			causeResolutionTextArea.setText(currentDetails);
 		});
 		
+		//handle name text box
+		nameTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+			currentName = newValue;
+		});
+		
 		//create new defect button
 		createNewDefectButton.setOnAction(this::createNewDefectButtonHandler);
 		
+		/*
 		//step injected choice box		
 		if (projectType.equals(projectsList[0])) {
 			injectedChoiceBox.getItems().addAll(businessLifeCycleStepsList);
@@ -151,11 +160,13 @@ public class DefectConsoleController implements Initializable {
 		else {
 			injectedChoiceBox.getItems().addAll(developmentLifeCycleStepsList);
 		}
+		*/
 		
 		injectedChoiceBox.valueProperty().addListener((observable, oldValue, newValue) -> {
 			currentInjected = newValue;
 		});
 		
+		/*
 		//step removed choice box
 		if (projectType.equals(projectsList[0])) {
 			removedChoiceBox.getItems().addAll(businessLifeCycleStepsList);
@@ -163,6 +174,7 @@ public class DefectConsoleController implements Initializable {
 		else {
 			removedChoiceBox.getItems().addAll(developmentLifeCycleStepsList);
 		}
+		*/
 		
 		removedChoiceBox.valueProperty().addListener((observable, oldValue, newValue) -> {
 			currentRemoved = newValue;
