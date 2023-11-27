@@ -4,7 +4,7 @@ public class EffortLogEntry {
 	private String projectType, lifeCycleStep, categoryName, effortName, otherDescription;
 	private String date, startTime, stopTime;
 	//private String employeeRank;
-	private double duration;
+	private String duration;
 	
 	//default constructor
 	EffortLogEntry() {
@@ -17,13 +17,13 @@ public class EffortLogEntry {
 		this.startTime = null;
 		this.stopTime = null;
 		//this.employeeRank = null;
-		this.duration = 0.0;
+		this.duration = null;
 	}
 	
 	//overloaded constructor
 	EffortLogEntry(String projectType, String lifeCycleStep, String categoryName, String effortName, 
 					String otherDescription, String date, String startTime, String stopTime, 
-					double duration) {
+					String duration) {
 		this.projectType = projectType;
 		this.lifeCycleStep = lifeCycleStep;
 		this.categoryName = categoryName;
@@ -86,7 +86,7 @@ public class EffortLogEntry {
 	*/
 	
 	//accessor for duration
-	public double getDuration() {
+	public String getDuration() {
 		return duration;
 	}
 	
@@ -140,7 +140,7 @@ public class EffortLogEntry {
 	*/
 	
 	//mutator for duration
-	public void setDuration(double duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 }

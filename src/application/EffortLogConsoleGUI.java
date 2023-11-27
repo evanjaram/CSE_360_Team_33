@@ -19,6 +19,8 @@ import java.time.LocalDateTime;
 import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 
+import java.text.DecimalFormat;
+
 public class EffortLogConsoleGUI implements Initializable {
 	//GUI components
 	@FXML
@@ -59,6 +61,9 @@ public class EffortLogConsoleGUI implements Initializable {
 	
 	private String startTime, startDate, stopTime, stopDate;
 	private double minutes;
+	private String length;
+	
+	DecimalFormat decimalFormat = new DecimalFormat("#.##");
 	//private String employeeRank;
 	//public ArrayList<EffortLogEntry> effortEntries = new ArrayList<EffortLogEntry>();
 	//private ArrayList<EffortLogEntry> businessEntries = new ArrayList<EffortLogEntry>();
@@ -215,10 +220,11 @@ public class EffortLogConsoleGUI implements Initializable {
 			Duration duration = Duration.between(startTimeObject, stopDateObject);
 			double seconds = duration.toMillis() / 1000.0;
 			minutes = seconds / 60.0;
+			length = decimalFormat.format(minutes);
 
 			//clock test to be deleted later
 			//test passed
-			System.out.print("Duration:" + String.format("%.2f",  minutes) + "\n");
+			System.out.print("Duration:" + length + "\n");
 			System.out.print("Start Date: " + startDate + "\n");
 			System.out.print("Start Time: " + startTime + "\n");
 			System.out.print("Stop Date: " + stopDate + "\n");
@@ -234,7 +240,7 @@ public class EffortLogConsoleGUI implements Initializable {
 			//once connected to registration somehow will add to this
 			//will also be added through some method once connected to logs system
 			EffortLogEntry logEntry = new EffortLogEntry(projectType, lifeCycleStep, categoryName, effortName, otherDescription,
-										startDate, startTime, stopTime, minutes);
+										startDate, startTime, stopTime, length);
 			
 			if (projectType.equals("Business Project")) {
 				Main.businessProject.effortLogs.add(logEntry);
@@ -262,7 +268,7 @@ public class EffortLogConsoleGUI implements Initializable {
 			System.out.println(logEntry.getStartTime());
 			System.out.println(logEntry.getStopTime());
 			//System.out.println(logEntry.getEmployeeRank());
-			System.out.println(String.format("%.2f", logEntry.getDuration()));
+			System.out.println(logEntry.getDuration());
 		}
 		else {
 			//display message that clock is not running
