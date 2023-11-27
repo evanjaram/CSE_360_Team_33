@@ -26,7 +26,7 @@ public class BusinessEffortsController implements Initializable {
 	@FXML
 	private TableColumn<EffortLogEntry, String> column1, column2, column3, column4, column5, column6, column8;
 	@FXML
-	private TableColumn<EffortLogEntry, Double> column7;
+	private TableColumn<EffortLogEntry, String> column7;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -37,7 +37,7 @@ public class BusinessEffortsController implements Initializable {
 		column4.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, String>("date"));
 		column5.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, String>("startTime"));
 		column6.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, String>("stopTime"));
-		column7.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, Double>("duration"));
+		column7.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, String>("duration"));
 		column8.setCellValueFactory(new PropertyValueFactory<EffortLogEntry, String>("otherDescription"));
 		
 		effortTable.setItems(getEfforts());
