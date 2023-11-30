@@ -150,7 +150,16 @@ public class EffortLogConsoleGUI implements Initializable {
 				effortNameChoiceBox.getItems().clear();
 				categoryName = effortCategoryList[3];
 				//edit this to be the defects
-				effortNameChoiceBox.getItems().add("Defects");
+				if (projectType.equals(projectsList[0])) {
+					ArrayList<String> businessNames = Main.businessProject.getNames();
+					effortNameChoiceBox.getItems().addAll(businessNames);
+				}
+				else {
+					ArrayList<String> developmentNames = Main.developmentProject.getNames();
+					effortNameChoiceBox.getItems().addAll(developmentNames);
+					
+				}
+				//effortNameChoiceBox.getItems().add("Defects");
 				effortNameLabel.setVisible(true);
 				effortNameLabel.setText(effortCategoryList[3]);
 			}
