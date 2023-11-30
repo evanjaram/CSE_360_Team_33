@@ -4,46 +4,44 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PublicLogsController">
+<AnchorPane id="AnchorPane" prefHeight="438.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PublicLogsController">
    <children>
-      <Label fx:id="logsLabel" layoutX="197.0" layoutY="40.0" prefHeight="38.0" prefWidth="183.0" text="Public Logs" textAlignment="CENTER" textFill="#0075ff" wrapText="true">
+      <ChoiceBox fx:id="nameChoiceBox" layoutX="321.0" layoutY="117.0" prefHeight="45.0" prefWidth="173.0" />
+      <Button fx:id="goToEffortDefectLogsButton" layoutX="286.0" layoutY="361.0" onAction="#goToEffortDefectLogs" prefHeight="59.0" prefWidth="137.0" text="Logs" textAlignment="CENTER" textFill="#1a2be9" wrapText="true">
          <font>
-            <Font name="Arial" size="33.0" />
-         </font>
-      </Label>
-      <Label fx:id="myLabel" layoutX="77.0" layoutY="123.0" prefHeight="37.0" prefWidth="214.0" text="Filter By Role &gt;&gt;&gt;" textFill="#0075ff">
-         <font>
-            <Font name="Arial" size="25.0" />
-         </font>
-      </Label>
-      <Label fx:id="selectLabel" layoutX="89.0" layoutY="160.0" prefHeight="15.0" prefWidth="129.0" text="&quot;Select a role level to view data&quot;">
-         <font>
-            <Font name="Arial" size="9.0" />
-         </font>
-      </Label>
-      <Button fx:id="myHome" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="57.0" prefWidth="96.0" text="Go Home." textFill="#0075ff">
-         <font>
-            <Font name="Arial" size="17.0" />
+            <Font name="Georgia Bold Italic" size="23.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="WAIT" />
-         </cursor>
-      </Button>
-      <Button fx:id="myNext" alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToNext" prefHeight="57.0" prefWidth="96.0" text="Next" textFill="#0075ff">
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button alignment="CENTER" layoutX="125.0" layoutY="361.0" onAction="#goToHome" prefHeight="59.0" prefWidth="137.0" text="Home" textAlignment="CENTER" textFill="#1a2be9" wrapText="true">
          <font>
-            <Font name="Arial" size="17.0" />
+            <Font name="Georgia Bold Italic" size="23.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="WAIT" />
-         </cursor>
-      </Button>
-      <ChoiceBox fx:id="myChoiceBox" layoutX="335.0" layoutY="119.0" prefHeight="45.0" prefWidth="183.0" />
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="logsLabel" layoutX="167.0" layoutY="25.0" prefHeight="52.0" prefWidth="255.0" text="Public Logs" textAlignment="CENTER" textFill="#1a2be9" wrapText="true">
+         <font>
+            <Font name="Georgia Bold Italic" size="38.0" />
+         </font>
+      </Label>
+      <Label fx:id="myLabel" layoutX="63.0" layoutY="121.0" prefHeight="37.0" prefWidth="246.0" text="Filter By Role &gt;&gt;&gt;" textFill="#1a2be9">
+         <font>
+            <Font name="Georgia Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="selectLabel" layoutX="72.0" layoutY="156.0" prefHeight="9.0" prefWidth="173.0" text="&quot;Select a role level to view data&quot;">
+         <font>
+            <Font name="Georgia Bold" size="9.0" />
+         </font>
+      </Label>
+      <Separator layoutX="16.0" layoutY="89.0" prefHeight="0.0" prefWidth="527.0" />
+      <Separator layoutX="16.0" layoutY="346.0" prefHeight="0.0" prefWidth="527.0" />
    </children>
-   <cursor>
-      <Cursor fx:constant="HAND" />
-   </cursor>
-   
 </AnchorPane>
+
