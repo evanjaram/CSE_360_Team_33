@@ -47,8 +47,8 @@ public class EffortLogEditorController {
 	@FXML
 	private void submitText() {
 		String hrs = hoursSpentField.getText();
-		if(!hrs.isEmpty() && !JoeUtils.isNumber(hrs)) {
-			JoeUtils.showError("hours spent must be a number");
+		if(!hrs.isEmpty() && !Utils.isNumber(hrs)) {
+			Utils.showError("hours spent must be a number");
 		} else {
 			currFeature.name = featureNameField.getText();
 			currFeature.esimatedStoryPoints = Double.parseDouble(estimatedStoryPointsField.getText());

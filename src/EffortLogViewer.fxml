@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLogViewerController">
    <children>
-      <Text fill="BLUE" layoutX="128.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effor Log Viewer" textAlignment="CENTER">
+      <Text fill="BLUE" layoutX="128.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effort Log Viewer" textAlignment="CENTER">
          <font>
             <Font size="50.0" />
          </font>
@@ -18,6 +18,8 @@
       <Text layoutX="261.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter By Tags:" />
       <TextField fx:id="tagsField" layoutX="350.0" layoutY="102.0" promptText="tag1, tag2, ..." />
       <Button layoutX="531.0" layoutY="102.0" mnemonicParsing="false" onAction="#filter" text="Filter" textFill="BLUE" />
+      <Button layoutX="541.0" layoutY="63.0" mnemonicParsing="false" text="+" onAction="#addFeature" />
       <ScrollPane fx:id="scrollPane" layoutX="26.0" layoutY="135.0" prefHeight="205.0" prefWidth="549.0" />
+      
    </children>
 </AnchorPane>
