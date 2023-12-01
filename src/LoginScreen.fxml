@@ -24,9 +24,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="238.0" layoutY="79.0" promptText="Enter ID" />
-      <PasswordField layoutX="238.0" layoutY="137.0" promptText="Enter Password" />
-      <Button layoutX="265.0" layoutY="207.0" mnemonicParsing="false" onAction="#switchtoTwoFactorAuthentication" text="Login">
+      <TextField fx:id="userID" layoutX="238.0" layoutY="79.0" onAction="#usernameFieldHandler" promptText="Enter ID" />
+      <PasswordField fx:id="userPassword" layoutX="238.0" layoutY="137.0" onAction="#passwordFieldHandler" promptText="Enter Password" />
+      <Button layoutX="265.0" layoutY="207.0" mnemonicParsing="false" onAction="#loginButtonHandler" text="Login">
          <font>
             <Font size="16.0" />
          </font>
@@ -37,5 +37,8 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Label fx:id="passwordEmpty" layoutX="244.0" layoutY="260.0" text="Empty Password Field" textFill="#d71919" visible="false" />
+      <Label fx:id="usernameEmpty" layoutX="246.0" layoutY="260.0" text="Enter username Field" textFill="#da3232" visible="false" />
+      <Label fx:id="denied" layoutX="216.0" layoutY="260.0" text="Username or Password Incorrect" textFill="#ff1f1f" visible="false" />
    </children>
 </AnchorPane>
